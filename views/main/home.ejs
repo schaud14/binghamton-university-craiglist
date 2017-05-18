@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <style>
+h1#events-calendar-heading { display: none; }
+#cubeCalendar .greenHeader { margin: -5px -5px 30px; }
+.callbacks_container ul li {
+  display: none;
+}
+.callbacks_container ul.callbacks_tabs li {
+  display: inline;
+}
+</style>
+    <title>Binghamton University - craigList</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/megamenu.css" rel="stylesheet"  type="text/css" />
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/binghamton-styles.css" rel="stylesheet" type="text/css" />
+    <br>
+    <header id="audienceNav">
+    </header>
+    <header id="headLogo" style="display: block;">
+      <div id="headLogoContent"><a href="/">
+        <img class="largeLogo" src="//www.binghamton.edu/images/v2/binghamton-university-logo.png" alt="Binghamton University logo" width="452" height="54" />
+        <!-- <img class="smallLogo" src="//www.binghamton.edu/images/v2/binghamton-university-logo-sm2.png" alt="Binghamton University logo" width="257" height="82" />  -->
+      </a>
+    </div>
+    </header>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="/">Binghamton University CraigList</a>
+        </div>
+
+        <!-- <form class="navbar-form navbar-left" method="post" action="/search">
+        <div class="form-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </form> -->
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <!-- <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+            <ul class="dropdown-menu">
+              <% for (var i = 0; i < categories.length; i++)  { %>
+                <li><a href="/products/<%= categories[i]._id %>"><%= categories[i].name %></a></li>
+              <% } %>
+            </ul>
+          </li> -->
+
+          <% if (!user) { %>
+
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Signup / Login</a>
+            <ul class="dropdown-menu">
+              <li><a href="/signup">Signup</a></li>
+              <li><a href="/login">Login</a></li>
+            </ul>
+          </li>
+
+         <% } else { %>
+
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.profile.name %></a>
+            <ul class="dropdown-menu">
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+          <% } %>
+
+
+
+
+
+      </div>
+    </nav>
+
+
+
+    <div  id="navbar-gap">
+      <div class="container">
+        <br><br><br>
+        <h1 style="color:#FFFFFF;">Signup/Login to Enter the University Shopping Portal</h1>
+        <button id="signup" class="float-left submit-button btn btn-success" >Sign up</button>
+        <script type="text/javascript">
+          document.getElementById("signup").onclick = function () {
+          location.href = "/signup";
+          };
+      </script>
+
+
+        <button id="login" class="float-left submit-button btn btn-success" >Login</button>
+        <script type="text/javascript">
+          document.getElementById("login").onclick = function () {
+          location.href = "/login";
+          };
+      </script>
+        <br><br><br>
+        <br><br><br>
+      </div>
+    </div>
+
+      <!-- /container -->
+      <% include ../partials/footer %>
+      <% include ../partials/javascriptOnly %>
+  </body>
+</html>

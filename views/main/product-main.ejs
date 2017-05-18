@@ -1,0 +1,58 @@
+<% layout('layout') -%>
+
+<br><br>
+<div  id="navbar-gap">
+  <div class="container">
+    <h1 class="text-center"style="color:#FFFFFF;"> Find your favourite Product</h1>
+    <!-- <p class="text-center">Search many of Ecommerce's products</p> -->
+    <!-- <div class= "row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="input-group col-md-12">
+          <input type="text" id="search" class="form-control input-lg" name="search_term" placeholder="Search for a Product ...">
+          <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-search"></i></button>
+          </span>
+        </div>
+        <br><br>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="row" id="searchResults">
+
+    <% for (var i = 0; i < products.length; i++) { %>
+    <div class="col-md-4">
+      <a href="/product/<%= products[i]._id %>">
+        <div class="thumbnail" style="{width:200px;height:200px;}">
+          <img src="<%= products[i].image %>" height="300" width="300">
+          <div class="caption">
+            <h3><%= products[i].name %></h3>
+            <p><%= products[i].category.name %></h3>
+            <p>$<%= products[i].price %></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% } %>
+    <br>
+    <ul class="pagination text-center" style="position: absolute;">
+      <li>
+        <% for(var i = 1; i <= pages; i++) { %>
+          <% if (i === 1)  {  %>
+            <li><a href="/"><%= i %></a></li>
+          <% } else { %>
+            <li><a href="/page/<%= i %>"><%= i %></a></li>
+          <% } %>
+
+        <% } %>
+      </li>
+
+    </ul>
+
+
+  </div>
+</div>

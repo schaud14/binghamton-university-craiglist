@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <style>
+#events-calendar-heading { display: none; }
+#cubeCalendar .greenHeader { margin: -5px -5px 30px; }
+.callbacks_container ul li {
+  display: none;
+}
+.callbacks_container ul.callbacks_tabs li {
+  display: inline;
+}
+</style>
+    <title>Binghamton University - craigList</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/megamenu.css" rel="stylesheet"  type="text/css" />
+    <link href="http://binghamton.edu/assets/stylesheets/css/legacy/binghamton-styles.css" rel="stylesheet" type="text/css" />
+    <br>
+    <header id="audienceNav">
+    </header>
+    <header id="headLogo" style="display: block;">
+      <div id="headLogoContent"><a href="/">
+        <img class="largeLogo" src="//www.binghamton.edu/images/v2/binghamton-university-logo.png" alt="Binghamton University logo" width="452" height="54" />
+        <!-- <img class="smallLogo" src="//www.binghamton.edu/images/v2/binghamton-university-logo-sm2.png" alt="Binghamton University logo" width="257" height="82" />  -->
+      </a>
+    </div>
+    </header>
+
+
+  <body>
+
+    <% include ./partials/navbar %>
+
+
+      <!-- Example row of columns -->
+      <%- body -%>
+
+      <!-- /container -->
+      <% include ./partials/footer %>
+      <% include ./partials/javascriptOnly %>
+  </body>
+</html>
